@@ -1,0 +1,56 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	{{ collage.title }}
+{% endblock %}
+{% block body %}
+	<section class="page-section bg-secondary" id="about">
+		<div class="container px-4 px-lg-5">
+			{% for message in app.flashes('success') %}
+				<div class="alert alert-success">
+					{{message}}
+				</div>
+			{% endfor %}
+			<div class="row gx-4 gx-lg-5 justify-content-center">
+				<div class="col-lg-8 text-center">
+					<h2 class="text-white mt-0">{{ collage.title }}</h2>
+					<p class="text-white mt-0">{{ collage.description | nl2br}}</p>
+					<hr class="divider divider-light"/>
+					{% if collage.sold == false %}
+						<p class='text-danger fs-4'>{{ collage.price }}
+							€</p>
+						<div class="btn btn-primary" id="btnPopup">Contact pour achat</div>
+						<div id="overlay" class="overlay mt-3 text-center">
+							<div id="popup" class="popup ">
+								<h2>Formulaire de contact pour achat
+									<span id="btnClose" class="btnClose text-danger">&times;</span>
+								</h2>
+								{{ form_start(form) }}
+								<div class="row">
+									<div class="col">{{ form_row(form.lastname) }}</div>
+									<div class="col">{{ form_row(form.firstname) }}</div>
+								</div>
+								<div class="row">
+									<div class="col">{{ form_row(form.phone) }}</div>
+									<div class="col">{{ form_row(form.email) }}</div>
+								</div>
+								{{ form_rest(form) }}
+								{{ form_end(form) }}
+							</div>
+						</div>
+						{% else %}
+
+					{% endif %}
+
+				</div>
+				<div class="col-lg-4 col-sm-6 mt-3">
+					{% if  collage.imageName ==  null %}
+						<img class="img-fluid" src="{{'/images/front/si_tu_savais.jpg' | imagine_filter('normal')}} " alt="...">
+					{% else %}
+						<img class="img-fluid" src="{{vich_uploader_asset(collage, 'imageFile') | imagine_filter('normal')}}" alt="..."/>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>{% endblock %}

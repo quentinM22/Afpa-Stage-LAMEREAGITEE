@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accessoire et Collaborations
+{% endblock %}
+
+{% block body %}
+	<section class="page-section bg-primary" id="about">
+		<div class="container px-4 px-lg-5">
+			<div class="row gx-4 gx-lg-5 justify-content-center">
+				<div class="col-lg-8 text-center">
+					<h2 class="text-white mt-0">Accessoire et Collaborations</h2>
+					<hr class="divider divider-light"/>
+				</div>
+			</div>
+		</div>
+	</section>
+	{% include "base/search.html.twig" %}
+	<div id="portfolio">
+		<div class="container-fluid p-0">
+			<div class="row g-0">
+				{% for autre in autres %}
+					{% if autre.collaborationBool == true %}
+						<div class="col-lg-4 col-sm-6">
+							<a class="portfolio-box" href="{{ path('autre.show', { id: autre.id, slug: autre.slug })}}" title="{{autre.title}}">
+								{% if  autre.imageName ==  null %}
+									<img class="img-fluid" src="{{'/images/front/si_tu_savais.jpg' | imagine_filter('miniature')}} " alt="...">
+								{% else %}
+									<img class="img-fluid" src="{{ vich_uploader_asset(autre, 'imageFile') | imagine_filter('miniature')}}" alt="..."/>
+								{% endif %}
+								<div class="portfolio-box-caption">
+									<div class="project-name">{{autre.title}}</div>
+									<br>
+									<div class="project-category text-white-50">En Collaboration avec
+										{% for option in autre.collaboration %}
+											<h3 class=" text-white-50">
+												{{option.FirstName}}
+												{{option.LastName}}
+											</h3>
+										{% endfor %}
+										<br>
+										<div class="project-category text-white-50">Cliquez pour plus d'infos</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					{% else %}
+						<div class="col-lg-4 col-sm-6">
+							<a class="portfolio-box" href="{{ path('autre.show', { id: autre.id, slug: autre.slug })}}" title="{{autre.title}}">
+								{% if  autre.imageName ==  null %}
+									<img class="img-fluid" src="{{'/images/front/si_tu_savais.jpg' | imagine_filter('miniature')}} " alt="...">
+								{% else %}
+									<img class="img-fluid" src="{{ vich_uploader_asset(autre, 'imageFile') | imagine_filter('miniature')}}" alt="..."/>
+								{% endif %}
+								<div class="portfolio-box-caption">
+									<div class="project-name">{{autre.title}}</div>
+									<br>
+									<div class="project-category text-white-50">Cliquez pour plus d'infos</div>
+								</div>
+							</a>
+						</div>
+
+					{% endif %}
+				{% endfor %}
+			</div>
+
+
+			<div class="pagination mt-4 justify-content-center">
+				{{ knp_pagination_render(autres) }}
+			</div>
+		</div>
+	{% endblock %}

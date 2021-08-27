@@ -1,0 +1,122 @@
+<!-- Footer -->
+<footer
+	class="text-center text-lg-start text-white sticky-bottom" style="background-color: #1c2331">
+	<!-- Section: Social media -->
+	<section
+		class="d-flex justify-content-between p-4" style="background-color: #6c757d">
+		<!-- Left -->
+		<div class="me-5">
+			<span>Retrouver moi sur les réseaux sociaux pour plus d'actualité:</span>
+		</div>
+		<!-- Left -->
+
+		<!-- Right -->
+		<div>
+			<a href=" https://www.facebook.com/lamereagitee" class="text-white me-4 fa fa-facebook"></a>
+			<a href="{{ path('home') }}" class="text-white me-4 fa fa-google"></a>
+			<a href="https://www.instagram.com/agitee_la_mere_/" class="text-white me-4 fa fa-instagram"></a>
+		</div>
+		<!-- Right -->
+	</section>
+	<!-- Section: Social media -->
+
+	<!-- Section: Links  -->
+	<section class="">
+		<div
+			class="container text-center text-md-start mt-5">
+			<!-- Grid row -->
+			<div
+				class="row mt-3">
+				<!-- Grid column -->
+				<div
+					class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+					<!-- Content -->
+					<h6 class="text-uppercase fw-bold">La Mère Agitée</h6>
+					<hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
+
+				</div>
+				<!-- Grid column -->
+
+				<!-- Grid column -->
+				<div
+					class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+					<!-- Links -->
+					<h6 class="text-uppercase fw-bold">Products</h6>
+					<hr
+					class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
+				{# <p>
+								              <a href="#!" class="text-white">MDBootstrap</a>
+								            </p>
+								            <p>
+								              <a href="#!" class="text-white">MDWordPress</a>
+								            </p>
+								            <p>
+								              <a href="#!" class="text-white">BrandFlow</a>
+								            </p>
+								            <p>
+								              <a href="#!" class="text-white">Bootstrap Angular</a>
+								            </p> #}
+				</div>
+				<!-- Grid column -->
+
+				<!-- Grid column -->
+				<div
+					class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+					<!-- Links -->
+					<h6 class="text-uppercase fw-bold">Liens</h6>
+					<hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
+					{% if is_granted("ROLE_ADMIN") %}
+						<p>
+							<a href="{{path('admin')}}" class="text-white">Administration</a>
+						</p>
+					{% endif %}
+					{# <p>
+										              <a href="#!" class="text-white">Become an Affiliate</a>
+										            </p>
+										            <p>
+										              <a href="#!" class="text-white">Shipping Rates</a>
+										            </p>
+										            <p>
+										              <a href="#!" class="text-white">Help</a>
+										            </p> #}
+				</div>
+				<!-- Grid column -->
+
+				<!-- Grid column -->
+				<div
+					class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+					<!-- Links -->
+					<h6 class="text-uppercase fw-bold">Contact</h6>
+					<hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
+					<p>
+						<i class="fa fa-map-marker"></i>
+						17 rue Bagot - 22000 Saint brieuc</p>
+					<p>
+						<i class="fa fa-envelope"></i>
+						lesmeresagitees@gmail.com</p>
+					<p type="telephone">
+						<i class="fa fa-phone"></i>
+						06 64 75 05 20</p>
+				</div>
+				<!-- Grid column -->
+			</div>
+			<!-- Grid row -->
+		</div>
+	</section>
+	<!-- Section: Links  -->
+
+	<!-- Copyright -->
+	<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+		© 2021 Copyright:
+		<a class="text-white" href="{{ path('home')}}">LaMèreAgitée</a>
+	</div>
+	<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+		Réalisé par :
+		<a class="text-white" href="">Quentin M.</a>
+	</div>
+	<!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+
+<!-- End of .container -->

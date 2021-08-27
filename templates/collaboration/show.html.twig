@@ -1,0 +1,39 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	{{ collaborateurs.FirstName }}
+	{{ collaborateurs.LastName }}
+{% endblock %}
+{% block body %}
+	<section class="page-section bg-secondary" id="about">
+		<div class="container px-4 px-lg-5">
+			<div class="row gx-4 gx-lg-5 justify-content-center">
+				<div class="col-lg-8 text-center">
+					<h2 class="text-white mt-0">{{ collaborateurs.FirstName }}
+						{{ collaborateurs.LastName }}</h2>
+					<h3>{{collaborateurs.job}}</h3>
+					<p class="text-white mt-0">{{ collaborateurs.description | nl2br}}</p>
+					<hr class="divider divider-light"/>
+					<div>
+						{% if collaborateurs.UrlFb != null %}
+							<a href="{{collaborateurs.UrlFb}}" class="text-white me-4 fa fa-facebook-square"></a>
+						{% endif %}
+						{% if collaborateurs.UrlSite != null %}
+							<a href="{{collaborateurs.UrlSite}}" class="text-white me-4 fa  fa-globe"></a>
+						{% endif %}
+						{% if collaborateurs.UrlInsta != null %}
+							<a href="{{collaborateurs.UrlInsta}}" class="text-white me-4 fa fa-instagram"></a>
+						{% endif %}
+					</div>
+				</div>
+				<div class="col-lg-4 col-sm-6">
+					{% if  collaborateurs.imageName ==  null %}
+						<img class="img-fluid" src="{{'/images/front/si_tu_savais.jpg' | imagine_filter('normal')}} " alt="...">
+					{% else %}
+						<img class="img-fluid" src="{{vich_uploader_asset(collaborateurs, 'imageFile') | imagine_filter('normal')}}" alt="..."/>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>{% endblock %}

@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		{% include "base/link.html.twig" %}
+		{# <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> #}
+		{# Run `composer require symfony/webpack-encore-bundle`
+		           and uncomment the following Encore helpers to start using Symfony UX #}
+			{% block stylesheets %}
+		{{ encore_entry_link_tags('app') }}
+		{% endblock %}
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
-</html>
+			{% block javascripts %}
+		{{ encore_entry_script_tags('app') }}
+	{% endblock %}
+	</head>
+		<body>
+
+		<!-- NAVBAR -->
+		{% include "base/nav.html.twig" %}
+		<!-- /NAVBAR -->{% block body %}
+		{% endblock %}
+
+
+		<!--FOOTER-->
+		{% include "base/footer.html.twig" %}
+		<!--/FOOTER-->
+
+	{% include "base/script.html.twig" %}
+</body></html>

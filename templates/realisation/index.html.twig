@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mobilier et Objets Décoratif
+{% endblock %}
+
+{% block body %}
+	<section class="page-section bg-primary" id="about">
+		<div class="container px-4 px-lg-5">
+			<div class="row gx-4 gx-lg-5 justify-content-center">
+				<div class="col-lg-8 text-center">
+					<h2 class="text-white mt-0">Mobiliers et Objets Décoratif</h2>
+					<hr class="divider divider-light"/>
+				</div>
+			</div>
+		</div>
+	</section>
+	{% include "base/search.html.twig" %}
+	<div id="portfolio">
+		<div class="container-fluid p-0">
+			<div class="row g-0">
+				{% for mobilier in mobiliers %}
+					<div class="col-lg-4 col-sm-6">
+						<a class="portfolio-box" href="{{ path('realisation.show', { id: mobilier.id, slug: mobilier.slug })}}" title="{{mobilier.title}}">
+							{% if  mobilier.imageName ==  null %}
+								<img class="img-fluid" src="{{'/images/front/si_tu_savais.jpg' | imagine_filter('miniature')}} " alt="...">
+							{% else %}
+								<img class="img-fluid" src="{{ vich_uploader_asset(mobilier, 'imageFile') | imagine_filter('miniature')}}" alt="..."/>
+							{% endif %}
+							<div class="portfolio-box-caption">
+								<div class="project-category text-white-50">Cliquez pour plus d'infos</div>
+								<div class="project-name">{{mobilier.title}}</div>
+							</div>
+						</a>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+		<br>
+		<div class="pagination mt-4 justify-content-center">
+			{{ knp_pagination_render(mobiliers) }}
+		</div>
+	</div>
+{% endblock %}
