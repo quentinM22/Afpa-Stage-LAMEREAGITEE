@@ -17,7 +17,7 @@
 					<p class="text-white mt-0">{{ mobilier.description | nl2br}}</p>
 					<hr class="divider divider-light"/>
 					{% if mobilier.sold == false %}
-						<p class='text-danger fs-4'>{{ mobilier.price }}
+						<p class='text-danger fs-4'>{{ mobilier.price | number_format(2,',')}}
 							€</p>
 						<div class="btn btn-primary" id="btnPopup">Contact pour achat</div>
 						<div id="overlay" class="overlay mt-3 text-center">

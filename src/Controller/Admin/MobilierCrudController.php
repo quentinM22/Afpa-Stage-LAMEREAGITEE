@@ -12,6 +12,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 
 class MobilierCrudController extends AbstractCrudController
 {
@@ -29,9 +30,8 @@ class MobilierCrudController extends AbstractCrudController
             TextareaField::new('description')
                 ->setLabel('Description')
                 ->hideOnIndex(),
-            MoneyField::new('price')
-                ->setLabel('Prix')
-                ->setCurrency('EUR'),
+            IntegerField::new('price')
+                ->setLabel('Prix'),
             BooleanField::new('sold')
                 ->setLabel('Vendu?'),
             AssociationField::new('mobiOptions')

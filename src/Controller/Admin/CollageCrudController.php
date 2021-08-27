@@ -29,7 +29,7 @@ class CollageCrudController extends AbstractCrudController
             TextareaField::new('description')
                 ->setLabel('Description')
                 ->hideOnIndex(),
-            MoneyField::new('price')
+            IntegerField::new('price')
                 ->setLabel('Prix')
                 ->setCurrency('EUR'),
             BooleanField::new('sold')
