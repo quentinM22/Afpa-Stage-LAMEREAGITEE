@@ -19,7 +19,7 @@
 		<div class="container-fluid p-0">
 			<div class="row g-0">
 				{% for mobilier in mobiliers %}
-					<div class="col-lg-4 col-sm-6">
+					<div class="col-lg-4 col-sm-6 p-4">
 						<a class="portfolio-box" href="{{ path('realisation.show', { id: mobilier.id, slug: mobilier.slug })}}" title="{{mobilier.title}}">
 							{% if  mobilier.imageName ==  null %}
 								<img class="img-fluid" src="{{'/images/front/si_tu_savais.jpg' | imagine_filter('miniature')}} " alt="...">

@@ -21,7 +21,7 @@
 			<div class="row g-0">
 				{% for collage in collages %}
 
-					<div class="col-lg-4 col-sm-6">
+					<div class="col-lg-4 col-sm-6 p-4">
 						<a class="portfolio-box" href="{{ path('collage.show', { id: collage.id, slug: collage.slug })}}" title="{{collage.title}}">
 							{% if  collage.imageName ==  null %}
 								<img class="img-fluid" src="{{'/images/front/si_tu_savais.jpg' | imagine_filter('miniature')}} " alt="...">

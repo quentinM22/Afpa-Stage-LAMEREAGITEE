@@ -19,20 +19,20 @@
 					{% if mobilier.sold == false %}
 						<p class='text-danger fs-4'>{{ mobilier.price | number_format(2,',')}}
 							€</p>
-						<div class="btn btn-primary" id="btnPopup">Contact pour achat</div>
+						<div class="btn btn-primary mb-4" id="btnPopup">Contact pour achat</div>
 						<div id="overlay" class="overlay mt-3 text-center">
-							<div id="popup" class="popup ">
+							<div id="popup" class="popup">
 								<h2>Formulaire de contact pour achat
 									<span id="btnClose" class="btnClose text-danger">&times;</span>
 								</h2>
 								{{ form_start(form) }}
 								<div class="row">
-									<div class="col">{{ form_row(form.lastname) }}</div>
-									<div class="col">{{ form_row(form.firstname) }}</div>
+									<div class="col m-2">{{ form_row(form.lastname) }}</div>
+									<div class="col m-2">{{ form_row(form.firstname) }}</div>
 								</div>
 								<div class="row">
-									<div class="col">{{ form_row(form.phone) }}</div>
-									<div class="col">{{ form_row(form.email) }}</div>
+									<div class="col m-2">{{ form_row(form.phone) }}</div>
+									<div class="col m-2">{{ form_row(form.email) }}</div>
 								</div>
 								{{ form_rest(form) }}
 
