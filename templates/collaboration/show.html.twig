@@ -11,9 +11,9 @@
 				<div class="col-lg-8 text-center">
 					<h2 class="text-white mt-0">{{ collaborateurs.FirstName }}
 						{{ collaborateurs.LastName }}</h2>
-					<h3>{{collaborateurs.job}}</h3>
-					<p class="text-white mt-0">{{ collaborateurs.description | nl2br}}</p>
+					<h3>{{collaborateurs.job}}</h3>		
 					<hr class="divider divider-light"/>
+					<p class="text-white mt-0">{{ collaborateurs.description | nl2br}}</p>
 					<div>
 						{% if collaborateurs.UrlFb != null %}
 							<a href="{{collaborateurs.UrlFb}}" class="text-white me-4 fa fa-facebook-square"></a>
@@ -28,7 +28,7 @@
 				</div>
 				<div class="col-lg-4 col-sm-6">
 					{% if  collaborateurs.imageName ==  null %}
-						<img class="img-fluid" src="{{'/images/front/si_tu_savais.jpg' | imagine_filter('normal')}} " alt="...">
+						<img class="img-fluid" src="{{'/images/front/profilenopic.jpg' | imagine_filter('normal')}} " alt="...">
 					{% else %}
 						<img class="img-fluid" src="{{vich_uploader_asset(collaborateurs, 'imageFile') | imagine_filter('normal')}}" alt="..."/>
 					{% endif %}

@@ -5,11 +5,11 @@
 
 
 {% block body %}
-	<section class="page-section bg-secondary" id="about">
+	<section class="page-section bg-dark" id="about">
 		<div class="container px-4 px-lg-5">
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<div class="col-lg-8 text-center">
-					<h2 class="text-white mt-0">Collaborateurs</h2>
+					<h2 class="text-white mt-0">Collaborations Artistique</h2>
 					<hr class="divider divider-light"/>
 				</div>
 			</div>
@@ -19,10 +19,10 @@
 		<div class="container-fluid p-0">
 			<div class="row g-0">
 				{% for collaborateur in collaborateurs %}
-					<div class="col-lg-4 col-sm-6">
+					<div class="col-lg-4 col-sm-6 p-4">
 						<a class="portfolio-box" href="{{ path('collaboration.show', { id: collaborateur.id, slug: collaborateur.slug })}}">
 							{% if  collaborateur.imageName ==  null %}
-								<img class="img-fluid" src="{{'/images/front/si_tu_savais.jpg' | imagine_filter('miniature')}} " alt="...">
+								<img class="img-fluid" src="{{'/images/front/profilenopic.jpg' | imagine_filter('miniature')}} " alt="...">
 							{% else %}
 								<img class="img-fluid" src="{{vich_uploader_asset(collaborateur, 'imageFile') | imagine_filter('miniature')}}" alt="..."/>
 							{% endif %}

@@ -14,10 +14,10 @@
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<div class="col-lg-8 text-center">
 					<h2 class="text-white mt-0">{{ collage.title }}</h2>
-					<p class="text-white mt-0">{{ collage.description | nl2br}}</p>
 					<hr class="divider divider-light"/>
+					<p class="text-white mt-0">{{ collage.description | nl2br}}</p>
 					{% if collage.sold == false %}
-						<p class='text-danger fs-4'>{{ collage.price | number_format(, '${ }', '${,}') }}
+						<p class='text-danger fs-4'>{{ collage.price | number_format(2, '.', ' ') }}
 							€</p>
 						<div class="btn btn-primary" id="btnPopup">Contact pour achat</div>
 						<div id="overlay" class="overlay mt-3 text-center">
