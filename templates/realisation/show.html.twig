@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 
-{% block title %}
+{% block title %}LMA | 
 	{{ mobilier.title }}
 {% endblock %}
 {% block body %}
@@ -45,7 +45,7 @@
 				</div>
 				<div class="col-lg-4 col-sm-6">
 					{% if  mobilier.imageName ==  null %}
-						<img class="img-fluid" src="{{'/images/front/si_tu_savais.jpg' | imagine_filter('normal')}} " alt="...">
+						<img class="img-fluid" src="{{'/images/front/oupss.jpg' | imagine_filter('normal')}} " alt="...">
 					{% else %}
 						<img class="img-fluid" src="{{vich_uploader_asset(mobilier, 'imageFile') | imagine_filter('normal')}}" alt="..."/>
 					{% endif %}

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mobilier et Objets Décoratif
+{% block title %}LMA | Mobilier et Objets Décoratif
 {% endblock %}
 
 {% block body %}
@@ -22,7 +22,7 @@
 					<div class="col-lg-4 col-sm-6 p-4">
 						<a class="portfolio-box" href="{{ path('realisation.show', { id: mobilier.id, slug: mobilier.slug })}}" title="{{mobilier.title}}">
 							{% if  mobilier.imageName ==  null %}
-								<img class="img-fluid" src="{{'/images/front/si_tu_savais.jpg' | imagine_filter('miniature')}} " alt="...">
+								<img class="img-fluid" src="{{'/images/front/oupss.jpg' | imagine_filter('miniature')}} " alt="...">
 							{% else %}
 								<img class="img-fluid" src="{{ vich_uploader_asset(mobilier, 'imageFile') | imagine_filter('miniature')}}" alt="..."/>
 							{% endif %}

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Presses / Evènements / ...
+{% block title %}LMA | Presses / Evènements / ...
 {% endblock %}
 
 
@@ -20,17 +20,19 @@
 		<div class="container-fluid p-0">
 			<div class="row g-0">
 				{% for press in presses %}
-					<div class="col-lg-3 col-sm-6">
-						<a class="portfolio-box" href="{{ press.url }}">
+					<div class="col-lg-3 col-sm-6 p-4">
+						<a class="portfolio-box" href="{{ press.url }}" 
+						onclick="window.open(this.href); return false;">
 							{% if  press.imageName ==  null %}
-								<img class="img-fluid" src="{{'/images/front/si_tu_savais.jpg' | imagine_filter('miniature')}} " alt="...">
+								<img class="img-fluid" src="{{'/images/front/nopresse.jpg' | imagine_filter('miniature')}} " alt="...">
 							{% else %}
 								<img class="img-fluid" src="{{ vich_uploader_asset(press, 'imageFile') | imagine_filter('miniature')}}" alt="..."/>
 							{% endif %}
 							<div class="portfolio-box-caption">
 								<div class="project-name">{{press.title}}</div>
+								
 								<div class="project-category text-white-40">{{press.description | nl2br}}</div>
-								<br>
+								
 								<div class="project-category text-white-50">Cliquez pour Accèder à l'information</div>
 							</div>
 						</a>

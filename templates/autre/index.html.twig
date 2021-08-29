@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accessoire et Collaborations
+{% block title %}LMA | Accessoire et Collaborations
 {% endblock %}
 
 {% block body %}
@@ -23,7 +23,7 @@
 						<div class="col-lg-4 col-sm-6 p-4">
 							<a class="portfolio-box" href="{{ path('autre.show', { id: autre.id, slug: autre.slug })}}" title="{{autre.title}}">
 								{% if  autre.imageName ==  null %}
-									<img class="img-fluid" src="{{'/images/front/si_tu_savais.jpg' | imagine_filter('miniature')}} " alt="...">
+									<img class="img-fluid" src="{{'/images/front/oupss.jpg' | imagine_filter('miniature')}} " alt="...">
 								{% else %}
 									<img class="img-fluid" src="{{ vich_uploader_asset(autre, 'imageFile') | imagine_filter('miniature')}}" alt="..."/>
 								{% endif %}
