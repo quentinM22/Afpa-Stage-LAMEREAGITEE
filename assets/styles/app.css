@@ -11334,10 +11334,13 @@ hr.divider-light {
   padding: 0.75rem 0;
 }
 #mainNav .navbar-nav .nav-item .nav-link:hover, #mainNav .navbar-nav .nav-item .nav-link:active {
-  color: #f4623a;
+  color: #6638fd;
+
+ 
 }
 #mainNav .navbar-nav .nav-item .nav-link.active {
-  color: #f4623a !important;
+  color:  #6638fd !important;
+
 }
 @media (min-width: 992px) {
   #mainNav {
@@ -11381,7 +11384,7 @@ hr.divider-light {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 4.5rem);
-  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("/public/images/front/20181023080334862-2.jpg");
+  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.7) 0%, rgba(92, 77, 66, 0.6) 100%), url("/public/images/front/20181023080334862-2.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
