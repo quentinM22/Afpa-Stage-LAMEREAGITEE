@@ -12,11 +12,9 @@
 
 		<!-- Right -->
 		<div>
-			<a href=" https://www.facebook.com/lamereagitee" class="text-white me-4 fa fa-facebook"
-			onclick="window.open(this.href); return false;"></a>
+			<a href=" https://www.facebook.com/lamereagitee" class="text-white me-4 fa fa-facebook" onclick="window.open(this.href); return false;"></a>
 			<a href="{{ path('home') }}" class="text-white me-4 fa fa-google"></a>
-			<a href="https://www.instagram.com/agitee_la_mere_/" class="text-white me-4 fa fa-instagram"
-			onclick="window.open(this.href); return false;"></a>
+			<a href="https://www.instagram.com/agitee_la_mere_/" class="text-white me-4 fa fa-instagram" onclick="window.open(this.href); return false;"></a>
 		</div>
 		<!-- Right -->
 	</section>
@@ -43,22 +41,14 @@
 				<div
 					class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
 					<!-- Links -->
-					<h6 class="text-uppercase fw-bold">Products</h6>
-					<hr
-					class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
-				{# <p>
-								              <a href="#!" class="text-white">MDBootstrap</a>
-								            </p>
-								            <p>
-								              <a href="#!" class="text-white">MDWordPress</a>
-								            </p>
-								            <p>
-								              <a href="#!" class="text-white">BrandFlow</a>
-								            </p>
-								            <p>
-								              <a href="#!" class="text-white">Bootstrap Angular</a>
-								            </p> #}
+					<h6 class="text-uppercase fw-bold">Support</h6>
+					<hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
+					<p>
+						<a href="{{ path('mentionslegales') }}" class="text-white">Mentions légales</a>
+					</p>
+
 				</div>
+
 				<!-- Grid column -->
 
 				<!-- Grid column -->
@@ -68,13 +58,13 @@
 					<h6 class="text-uppercase fw-bold">Liens</h6>
 					<hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
 					{% if app.user %}
-					<p>
-						<a href="{{ path('app_logout') }}" class="text-danger">Se déconnecter</a>
-					</p>
+						<p>
+							<a href="{{ path('app_logout') }}" class="text-danger">Se déconnecter</a>
+						</p>
 					{% else %}
-					<p>
-						<a href="{{path('app_login')}}" class="text-white">Se connecter</a>			
-					</p>
+						<p>
+							<a href="{{path('app_login')}}" class="text-white">Se connecter</a>
+						</p>
 					{% endif %}
 					{% if is_granted("ROLE_ADMIN") %}
 						<p>
@@ -82,14 +72,14 @@
 						</p>
 					{% endif %}
 					{# <p>
-										              <a href="#!" class="text-white">Become an Affiliate</a>
-										            </p>
-										            <p>
-										              <a href="#!" class="text-white">Shipping Rates</a>
-										            </p>
-										            <p>
-										              <a href="#!" class="text-white">Help</a>
-										            </p> #}
+																																																	              <a href="#!" class="text-white">Become an Affiliate</a>
+																																																	            </p>
+																																																	            <p>
+																																																	              <a href="#!" class="text-white">Shipping Rates</a>
+																																																	            </p>
+																																																	            <p>
+																																																	              <a href="#!" class="text-white">Help</a>
+																																																	            </p> #}
 				</div>
 				<!-- Grid column -->
 
@@ -99,11 +89,10 @@
 					<!-- Links -->
 					<h6 class="text-uppercase fw-bold">Contact</h6>
 					<hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
-					<a class="text-white" href="https://www.google.fr/maps/place/17+Rue+Bagot,+22000+Saint-Brieuc/@48.5123841,-2.7798839,17z/data=!3m1!4b1!4m5!3m4!1s0x480e1d5bb6da638f:0xb2dd8252c55742be!8m2!3d48.5123841!4d-2.7776952"
-					onclick="window.open(this.href); return false;">
-					<p>
-						<i class="fa fa-map-marker"></i>
-						17 rue Bagot - 22000 Saint brieuc</p>
+					<a class="text-white" href="https://www.google.fr/maps/place/17+Rue+Bagot,+22000+Saint-Brieuc/@48.5123841,-2.7798839,17z/data=!3m1!4b1!4m5!3m4!1s0x480e1d5bb6da638f:0xb2dd8252c55742be!8m2!3d48.5123841!4d-2.7776952" onclick="window.open(this.href); return false;">
+						<p>
+							<i class="fa fa-map-marker"></i>
+							17 rue Bagot - 22000 Saint brieuc</p>
 					</a>
 					<p>
 						<i class="fa fa-envelope"></i>
@@ -126,11 +115,9 @@
 	</div>
 	<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
 		Réalisé par :
-		<a class="text-white" href="">Quentin M.</a>
+		<a class="text-white" href="http://www.quentinmdev.fr" onclick="window.open(this.href); return false;">Quentin M.</a>
 	</div>
 	<!-- Copyright -->
 </footer>
 <!-- Footer -->
-
-
 <!-- End of .container -->
